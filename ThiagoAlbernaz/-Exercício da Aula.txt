@@ -1,0 +1,9 @@
+-Exercício da Aula
+1)OnCreate
+2)OnStart
+3)OnPause
+4)OnStop
+5)OnCreate
+6)OnStart
+7)OnPause
+8)OnStop
