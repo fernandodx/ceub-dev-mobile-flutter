@@ -1,0 +1,16 @@
+ao executar:
+
+2024-04-01 10:46:30.353 11953-11953 TELA                    com...mple.playgroundandroidcompose  I  ACESSANDO onCreate
+2024-04-01 10:46:30.424 11953-11953 TELA                    com...mple.playgroundandroidcompose  I  ACESSANDO onStart
+
+ao girar na horizontal:
+
+2024-04-01 10:47:47.514 11953-11953 TELA                    com...mple.playgroundandroidcompose  I  ACESSANDO onPause
+2024-04-01 10:47:47.523 11953-11953 TELA                    com...mple.playgroundandroidcompose  I  ACESSANDO onStop
+2024-04-01 10:47:47.543 11953-11953 TELA                    com...mple.playgroundandroidcompose  I  ACESSANDO onCreate
+2024-04-01 10:47:47.547 11953-11953 TELA                    com...mple.playgroundandroidcompose  I  ACESSANDO onStart
+
+ao clicar no menu:
+
+2024-04-01 10:48:53.350 11953-11953 TELA                    com...mple.playgroundandroidcompose  I  ACESSANDO onPause
+2024-04-01 10:48:53.876 11953-11953 TELA                    com...mple.playgroundandroidcompose  I  ACESSANDO onStop
