@@ -153,7 +153,7 @@ fun Cabecalho(nome: String, sobreNome: String) {
                      */
 
                 Row(
-                    horizontalArrangement = Arrangement.SpaceBetween,
+                    horizontalArrangement = Arrangement.SpaceAround,
                     modifier = Modifier.fillMaxSize()
                 ) {
                     ItemCard(valor = "Confirmar")
@@ -171,7 +171,7 @@ fun Cabecalho(nome: String, sobreNome: String) {
 @Composable
 fun CabecalhoPreview() {
     PlaygroundAndroidComposeTheme {
-        Cabecalho(nome = "Fernando", sobreNome = "Dias")
+        Cabecalho(nome = "Augusto", sobreNome = "Rodrigues")
     }
 }
 
