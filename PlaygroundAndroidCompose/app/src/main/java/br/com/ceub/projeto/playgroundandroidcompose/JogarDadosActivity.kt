@@ -15,6 +15,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MovableContent
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -50,7 +54,9 @@ fun ImagemDaDosComBotao (meuModifier: Modifier = Modifier
     .fillMaxSize()
     .wrapContentSize(Alignment.Center)){
 
-    var valorDado = 1
+    var valorDado by remember {
+        mutableIntStateOf(1)
+    }
 
     val imagemResource = when(valorDado) {
         1 -> R.drawable.dado_1
