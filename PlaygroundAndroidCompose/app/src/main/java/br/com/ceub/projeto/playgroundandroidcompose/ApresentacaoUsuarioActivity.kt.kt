@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Surface
@@ -20,7 +21,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.VerticalAlignmentLine
+
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -39,8 +40,7 @@ class ApresentacaoUsuarioActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = CorCeub
                 ) {
-
-
+                    AppApresentacao()
                 }
             }
 
@@ -61,13 +61,13 @@ fun CardApresentacao() {
             modifier = Modifier.size(60.dp)
         )
         Text(
-            text = "NOME",
+            text = "Augusto",
             fontSize = 32.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White
         )
         Text(
-            text = "Cargo",
+            text = "Dev Full-stack",
             fontSize = 16.sp,
             color = Color.White
         )
@@ -86,7 +86,7 @@ fun CardContato() {
                 modifier = Modifier.size(35.dp)
             )
             Spacer(modifier = Modifier.width(16.dp))
-            Text(text = "fulano@gmail.com", color = Color.White)
+            Text(text = "gutobielsantos@gmail.com", color = Color.White)
         }
         Spacer(modifier = Modifier.height(16.dp))
         Row(modifier = Modifier.fillMaxWidth(),
@@ -98,12 +98,21 @@ fun CardContato() {
                 modifier = Modifier.size(35.dp)
             )
             Spacer(modifier = Modifier.width(16.dp))
-            Text(text = "+55 61 9999-88888", color = Color.White)
+            Text(text = "+55 61 98569-5745", color = Color.White)
         }
     }
 }
 
-
+@Composable
+fun AppApresentacao(){
+    Column(modifier = Modifier.padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.SpaceEvenly) {
+        CardApresentacao()
+        Spacer(modifier = Modifier.height(300.dp))
+        CardContato()
+    }
+}
 @Preview
 @Composable
 fun CardApresentacaoPreview() {
@@ -112,19 +121,7 @@ fun CardApresentacaoPreview() {
             modifier = Modifier.fillMaxSize(),
             color = CorCeub
         ) {
-            Column(
-                modifier = Modifier.padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp)
-            ) {
-                Spacer(modifier = Modifier.height(20.dp))
-                CardApresentacao()
-                Spacer(modifier = Modifier.height(500.dp))
-                CardContato()
-                Spacer(modifier = Modifier.height(20.dp))
+            AppApresentacao()
             }
-
-
-
         }
     }
-}
