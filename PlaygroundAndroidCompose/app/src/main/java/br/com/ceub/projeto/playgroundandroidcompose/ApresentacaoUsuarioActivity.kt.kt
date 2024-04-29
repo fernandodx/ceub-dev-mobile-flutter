@@ -37,6 +37,11 @@ class ApresentacaoUsuarioActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = CorCeub
                 ) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.SpaceAround) {
+                        CardApresentacao()
+                        CardContato()
+                    }
 
 
                 }
@@ -101,8 +106,30 @@ fun CardContato() {
     }
 }
 
+@Composable
+fun ItemContato(image : Int, descricaoContato: String){
+    Row(modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center) {
+        Image(
+            painter = painterResource(id = image),
+            contentDescription = null,
+            modifier = Modifier.size(35.dp)
+        )
+        Spacer(modifier = Modifier.width(16.dp))
+        Text(text = "descricaoContato", color = Color.White)
 
-@Preview
+}
+
+@Composable
+fun appApresentacao(){
+    Column(horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.SpaceAround) {
+        CardApresentacao()
+        CardContato()
+    }
+
+
 @Composable
 fun CardApresentacaoPreview() {
     PlaygroundAndroidComposeTheme {
@@ -110,12 +137,10 @@ fun CardApresentacaoPreview() {
             modifier = Modifier.fillMaxSize(),
             color = CorCeub
         ) {
-            Column {
-                CardApresentacao()
-                CardContato()
+            appApresentacao()
             }
 
 
         }
     }
-}
+}}
