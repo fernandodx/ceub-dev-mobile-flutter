@@ -3,13 +3,12 @@ package br.com.ceub.projeto.playgroundandroidcompose.lista
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
@@ -27,6 +26,7 @@ import br.com.ceub.projeto.playgroundandroidcompose.lista.model.Paisagem
 import br.com.ceub.projeto.playgroundandroidcompose.ui.theme.CorCeub
 import br.com.ceub.projeto.playgroundandroidcompose.ui.theme.PlaygroundAndroidComposeTheme
 
+@OptIn(ExperimentalFoundationApi::class)
 class ListaPaisagemActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,16 +40,13 @@ class ListaPaisagemActivity : ComponentActivity() {
     }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun AppLista() {
-//    PaisagemCard(
-//        paisagem = Paisagem(R.drawable.image1, "Imagem 1"),
-//        modifier = Modifier.fillMaxWidth()
-//    )
-
-    PaisagemLista(lista = PaisagemDataSource().consultarPaisagens())
+    PaisagemGrid(lista = PaisagemDataSource().consultarPaisagens())
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun PaisagemCard(paisagem: Paisagem, modifier: Modifier) {
     Card(modifier = modifier) {
@@ -57,31 +54,28 @@ fun PaisagemCard(paisagem: Paisagem, modifier: Modifier) {
             Image(
                 painter = painterResource(id = paisagem.idImg),
                 contentDescription = paisagem.descricao,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(200.dp),
+                modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.Crop
             )
-            Text(text = paisagem.descricao,
-                modifier = modifier
-                    .padding(all = 16.dp),
-                style = MaterialTheme.typography.headlineSmall)
+            Text(
+                text = paisagem.descricao,
+                modifier = Modifier.padding(all = 16.dp),
+                style = MaterialTheme.typography.headlineSmall
+            )
         }
     }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun PaisagemLista(lista : List<Paisagem>,
-                  modifier: Modifier = Modifier
-                      .fillMaxWidth()
-                      .padding(16.dp)) {
-    LazyColumn {
+fun PaisagemGrid(lista: List<Paisagem>) {
+    LazyVerticalGrid(
+        cells = GridCells.Fixed(2)
+    ) {
         items(lista) { paisagem ->
-            PaisagemCard(paisagem = paisagem,
-                modifier = modifier)
+            PaisagemCard(paisagem = paisagem, modifier = Modifier.padding(8.dp))
         }
     }
-
 }
 
 @Preview
