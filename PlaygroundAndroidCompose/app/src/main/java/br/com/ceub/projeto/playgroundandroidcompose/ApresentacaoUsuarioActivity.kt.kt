@@ -38,17 +38,12 @@ class ApresentacaoUsuarioActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = CorCeub
                 ) {
-<<<<<<< HEAD
                     Column(horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.SpaceAround) {
                         CardApresentacao()
                         CardContato()
                     }
-
-
-=======
                    AppApresentacao()
->>>>>>> 362993f2736c98443e09719c7000eca046265849
                 }
             }
 
@@ -95,21 +90,6 @@ fun CardContato() {
 }
 
 @Composable
-fun ItemContato(@DrawableRes image : Int, descricaoContato : String) {
-    Row(modifier = Modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.Center) {
-        Image(
-            painter = painterResource(id = image),
-            contentDescription = null,
-            modifier = Modifier.size(35.dp)
-        )
-        Spacer(modifier = Modifier.width(16.dp))
-        Text(text = descricaoContato, color = Color.White)
-    }
-}
-
-@Composable
 fun AppApresentacao(){
     Column(horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceEvenly) {
@@ -133,14 +113,6 @@ fun ItemContato(image : Int, descricaoContato: String){
 
 }
 
-@Composable
-fun appApresentacao(){
-    Column(horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.SpaceAround) {
-        CardApresentacao()
-        CardContato()
-    }
-
 
 @Composable
 fun CardApresentacaoPreview() {
@@ -149,14 +121,7 @@ fun CardApresentacaoPreview() {
             modifier = Modifier.fillMaxSize(),
             color = CorCeub
         ) {
-<<<<<<< HEAD
-            appApresentacao()
-            }
-
-
-=======
             AppApresentacao()
->>>>>>> 362993f2736c98443e09719c7000eca046265849
         }
     }
 }}
