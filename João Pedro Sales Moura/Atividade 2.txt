@@ -1,0 +1,17 @@
+void main() {
+
+int ano = readLine();
+
+int seculo = calcularSeculo (ano);
+
+
+int funcaoSeculo(int ano) {
+
+int seculo = (ano + 99) ~/ 100;
+
+return seculo;
+}
+
+print("0 ano $ano, é do século $seculo!");
+}
+
