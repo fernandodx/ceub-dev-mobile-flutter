@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">LayoutDeTela</string>
+    <string name="profile_image_desc">Imagem de Perfil</string>
+    <string name="phone_icon_desc">Ícone de Telefone</string>
+    <string name="email_icon_desc">Ícone de Email</string>
+</resources>
